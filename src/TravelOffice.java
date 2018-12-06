@@ -1,23 +1,37 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class TravelOffice {
 
-    public static void main(String args[]){
-        Adress adress = new Adress("Piotrkowska" , "91-100" , "Lodz");
-        Customer customer = new Customer("Wojciech Szuba");
-        Trip trip = new Trip(new Date(2018,11,23), new Date(2018, 12, 04),
-                "Karaiby");
+    Customer[] customersTab;
 
-        CustomerTab customerTab = new CustomerTab();
+    static int customerCount;
 
-        customer.assignTrip(trip);
-        customer.setAdress(adress);
-        customer.getInfo();
-        customerTab.addCustomer(customer);
-        customerTab.addCustomer(customer);
-        customerTab.addCustomer(customer);
-        customerTab.addCustomer(customer);
-        customerTab.getCustomerCount();
+
+    public TravelOffice() {
+        this.customersTab = new Customer[2];
     }
+
+    public void addCustomer(Customer customer){
+        customerCount++;
+        if(customerCount > customersTab.length){
+            Customer[] newCustomerTab = new Customer[customersTab.length + 1];
+            System.arraycopy(customersTab, 0, newCustomerTab, 0, customersTab.length);
+            customersTab = newCustomerTab.clone();
+            customersTab[customerCount-1] = customer;
+        } else {
+            customersTab[customerCount-1] = customer;
+        }
+    }
+    public void getCustomerCount(){
+        System.out.println("Liczba zapisanych klientów: " + customersTab.length);
+    }
+
+    public String toString() {
+        int count = 1;
+        String info = "Total clients [" + customerCount + "]\n\tClient list: ";
+        for (Customer customer : customersTab) {
+            info += "\n\nClient number [" + count + "]\n\n"+customer.toString();
+            ++count;
+        }
+        return info;
+    }
+
 }

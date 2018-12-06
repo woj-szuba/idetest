@@ -1,6 +1,6 @@
 public class Date {
 
-    int year, month, day;
+    private int year, month, day;
 
     public Date(int year, int month, int day) {
         this.year = year;
@@ -8,10 +8,9 @@ public class Date {
         this.day = day;
     }
 
-    public void getInfo(){
+    public String toString(){
         System.out.println(day + "/" + month + "/" + year);
-
-
+        return null;
     }
 }
 

@@ -1,8 +1,8 @@
 public class Customer {
 
-    String name;
-    Adress adress;
-    Trip trip;
+    private String name;
+    private Adress adress;
+    private Trip trip;
 
     public Customer(String name) {
         this.name = name;
@@ -18,11 +18,11 @@ public class Customer {
     }
 
 
-    public void getInfo(){
+    public String toString(){
         System.out.println(name);
-        adress.getInfo();
-        trip.getInfo();
+        adress.toString();
+        trip.toString();
         System.out.println();
-
+        return null;
     }
 }

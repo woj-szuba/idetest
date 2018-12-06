@@ -1,8 +1,8 @@
 public class Adress {
 
-    String street;
-    String zip;
-    String city;
+    private String street;
+    private String zip;
+    private String city;
 
     public Adress(String street, String zip, String city) {
         this.street = street;
@@ -10,11 +10,11 @@ public class Adress {
         this.city = city;
     }
 
-    public void getInfo(){
+    public String toString(){
         System.out.println("Miasto: " + city);
         System.out.println("Ulica: " + street);
         System.out.println("Kod pocztowy: " + zip);
         System.out.println();
-
+        return null;
     }
 }
