@@ -28,5 +28,6 @@ public class Test {
         travelOffice.addCustomer(customer1);
         travelOffice.addCustomer(customer2);
         travelOffice.getCustomerCount();
+        Date.writeYourDate("10/11/2016", "'/,.");
     }
 }
