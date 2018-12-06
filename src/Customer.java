@@ -17,6 +17,7 @@ public class Customer {
         this.trip = trip;
     }
 
+
     public void getInfo(){
         System.out.println(name);
         adress.getInfo();
