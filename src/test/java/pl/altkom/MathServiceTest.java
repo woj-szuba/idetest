@@ -1,15 +1,16 @@
 package pl.altkom;
 
+import codingBat.service.MathService;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class MathTest {
+public class MathServiceTest {
 
     @Test
     public void multiply() {
         // Given
-        Math math = new Math();
+        MathService math = new MathService();
         int a = 10, b = 20;
         int expectedOutput = 200;
         // When
